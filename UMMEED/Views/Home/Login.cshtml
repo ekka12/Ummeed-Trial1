@@ -1,0 +1,21 @@
+<html>
+
+    <meta>
+    <head>
+
+    </head>
+
+    <Div align = "Left">@TempData["message"]
+        
+        <h3><u>PLease Enter Your Credentials</u></h1></Div>
+    <body align="center">
+
+        <form action="/Home/Login" method="POST">
+           USER NAME : <input type="text" name="uname" id="uname" required="true" placeholder="Enter your uid"/>
+           PassWord  : <input type="password" name="password" id="password" required="true" placeholder="Enter your pwd"/>
+           Role      : <input type="text"  name="role" id="role" required="true" placeholder="Enter your Role"/>
+           <button type="submit" name="btn" id="btn">Login</button>
+        
+        </form>
+    </body>
+</html>

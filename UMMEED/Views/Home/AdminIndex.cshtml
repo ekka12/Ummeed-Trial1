@@ -1,0 +1,41 @@
+@using BOL;
+
+@{
+    List<ChildSts>chlist = ViewData["Child"] as List<ChildSts>;
+}
+
+<html>
+  <meta>
+  <head></head>
+  <div align="left"><h3><u>Welcome Admin Page</u></h3></div>
+  <body>
+      
+       <form action="/Home/AdminIndex" method="get">
+         <div align="left"><h4><u>@TempData["message"]</u></h4></div>
+         <table class="table">
+            <tr>
+                <th>ChilD ID</th>
+                <th>Child Name</th>
+                <th>Child Payment</th>
+                <th>Paid date</th>
+            </tr>
+           
+                @{
+                    foreach(ChildSts ch in chlist){
+                      <tr>
+                        <td>@ch.Chid</td>
+                        <td>@ch.Chname</td>
+                        <td>@ch.Payment</td>
+                        <td>@ch.Date</td>
+                        <td><a href="/home/edit?chid=@ch.Chid">UPDATE</a> / <a href="/home/delete?chid=@ch.Chid">REMOVE</a></td>
+                      </tr>
+                    }
+                }
+            
+
+         </table>
+       </form>
+       <div align="Left"><a href="/home/insert">Add New Entries</a></div>
+  </body>
+</html>
+

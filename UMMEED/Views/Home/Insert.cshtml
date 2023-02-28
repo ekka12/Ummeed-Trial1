@@ -1,0 +1,51 @@
+@using BOL;
+@{
+   
+    ChildSts ch = ViewData["Child"] as ChildSts;
+    
+}
+
+<html>
+    <meta>
+    <head>
+
+    </head>
+     
+    <div align="left"><h3><u>Please fill the entries Carefully</u></h3></div>
+    <body>
+       
+        <form action="/home/insert" method="post">
+                    
+              <input type="hidden" name="chid" id="chid" value="@ch.Chid"/>
+          <table class="table">
+            <tr><th>
+                 Child Name : <input type="text" name="chname" id="chname" required="true" placeholder="Enter child name"/>
+            </th>
+                
+            </tr>
+            <tr>
+                <th>
+                 Child Entry Date : <input type="text" name="date" id="date" required="true" placeholder="yyyy/mm/dd"/>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                Create Password : <input type="text" name="password" id="password" required="true" placeholder="Create pasword"/>
+                </th>
+                
+            </tr>
+            @* <tr>
+                <th>
+                 Unique Key : <input type="number" name="chkey" id="chkey" required="true" placeholder="Create Unique Id"/>
+                </th>
+            </tr> *@
+            <tr>
+                <th>
+                    <button type="submit" name="btn" id="btn">Register</button>
+                </th>
+            </tr>
+
+          </table>
+        </form>
+    </body>
+</html>
